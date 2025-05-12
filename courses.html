@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses - LinguaLearn</title>
+    <style>
+        /* Reuse all the global styles from index.html */
+        /* Add specific styles for the courses page */
+        
+        /* Courses Hero */
+        .courses-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/courses-bg.jpg') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        /* Language Tabs */
+        .language-tabs {
+            padding: 50px 0;
+            background: var(--light);
+        }
+        
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .tab-btn:hover:not(.active) {
+            background: #f0f0f0;
+        }
+        
+        /* Course Levels */
+        .course-levels {
+            padding: 50px 0;
+        }
+        
+        .level-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .level-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .level-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .level-header {
+            padding: 20px;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .level-body {
+            padding: 20px;
+        }
+        
+        .level-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .level-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .level-features li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            position: relative;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .step:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .courses-hero {
+                height: 50vh;
+            }
+        }
+    </style>
+    <!-- Reuse the same font and icon links from index.html -->
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.svg" alt="LinguaLearn Logo" width="180" height="40">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Courses Hero -->
+    <section class="courses-hero">
+        <div class="container">
+            <h1>Our Language Courses</h1>
+            <p>Choose from our comprehensive language programs designed for all levels</p>
+        </div>
+    </section>
+
+    <!-- Language Tabs -->
+    <section class="language-tabs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Our Languages</h2>
+                <p>Select a language to see available courses</p>
+            </div>
+            <div class="tabs-container">
+                <button class="tab-btn active" data-language="all">All Languages</button>
+                <button class="tab-btn" data-language="spanish">Spanish</button>
+                <button class="tab-btn" data-language="french">French</button>
+                <button class="tab-btn" data-language="japanese">Japanese</button>
+                <button class="tab-btn" data-language="german">German</button>
+            </div>
+            
+            <div class="language-courses">
+                <!-- Spanish Courses -->
+                <div class="language-course" data-language="spanish">
+                    <div class="course-img">
+                        <img src="images/spanish-course.jpg" alt="Spanish Course" width="600" height="400">
+                    </div>
+                    <div class="course-info">
+                        <h3>Spanish Language Program</h3>
+                        <p>Our Spanish courses cover everything from basic conversation to advanced grammar, with a focus on Latin American and European Spanish variations.</p>
+                        <a href="pricing.html" class="btn">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <!-- French Courses -->
+                <div class="language-course" data-language="french">
+                    <div class="course-img">
+                        <img src="images/french-course.jpg" alt="French Course" width="600" height="400">
+                    </div>
+                    <div class="course-info">
+                        <h3>French Language Program</h3>
+                        <p>Master the language of love with our comprehensive French courses, covering pronunciation, grammar, and cultural nuances.</p>
+                        <a href="pricing.html" class="btn">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <!-- Japanese Courses -->
+                <div class="language-course" data-language="japanese">
+                    <div class="course-img">
+                        <img src="images/japanese-course.jpg" alt="Japanese Course" width="600" height="400">
+                    </div>
+                    <div class="course-info">
+                        <h3>Japanese Language Program</h3>
+                        <p>Learn Japanese writing systems (hiragana, katakana, kanji) and conversational skills for everyday situations and business contexts.</p>
+                        <a href="pricing.html" class="btn">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <!-- German Courses -->
+                <div class="language-course" data-language="german">
+                    <div class="course-img">
+                        <img src="images/german-course.jpg" alt="German Course" width="600" height="400">
+                    </div>
+                    <div class="course-info">
+                        <h3>German Language Program</h3>
+                        <p>Our German courses help you navigate the complexities of German grammar while building practical communication skills.</p>
+                        <a href="pricing.html" class="btn">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Levels -->
+    <section class="course-levels">
+        <div class="container">
+            <div class="section-title">
+                <h2>Course Levels</h2>
+                <p>We offer courses for all proficiency levels</p>
+            </div>
+            <div class="level-cards">
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3>Beginner</h3>
+                        <p>Starting from scratch</p>
+                    </div>
+                    <div class="level-body">
+                        <p>Perfect for absolute beginners with no prior knowledge of the language.</p>
+                        <ul class="level-features">
+                            <li>Basic vocabulary and phrases</li>
+                            <li>Simple sentence structures</li>
+                            <li>Pronunciation fundamentals</li>
+                            <li>Everyday conversation practice</li>
+                        </ul>
+                        <a href="pricing.html" class="btn">View Beginner Courses</a>
+                    </div>
+                </div>
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3>Intermediate</h3>
+                        <p>Building fluency</p>
+                    </div>
+                    <div class="level-body">
+                        <p>For learners who can handle basic conversations and want to improve.</p>
+                        <ul class="level-features">
+                            <li>Expanded vocabulary</li>
+                            <li>Complex grammar structures</li>
+                            <li>Reading and listening comprehension</li>
+                            <li>Cultural insights</li>
+                        </ul>
+                        <a href="pricing.html" class="btn">View Intermediate Courses</a>
+                    </div>
+                </div>
+                <div class="level-card">
+                    <div class="level-header">
+                        <h3>Advanced</h3>
+                        <p>Mastering the language</p>
+                    </div>
+                    <div class="level-body">
+                        <p>For those who want to refine their skills and sound like a native.</p>
+                        <ul class="level-features">
+                            <li>Idiomatic expressions</li>
+                            <li>Advanced grammar</li>
+                            <li>Debate and discussion</li>
+                            <li>Specialized vocabulary</li>
+                        </ul>
+                        <a href="pricing.html" class="btn">View Advanced Courses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How Our Courses Work</h2>
+                <p>Our proven method for language learning success</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <h3>Personalized Assessment</h3>
+                    <p>Start with a placement test to determine your current level and learning goals.</p>
+                </div>
+                <div class="step">
+                    <h3>Interactive Lessons</h3>
+                    <p>Engage with multimedia lessons that combine speaking, listening, reading and writing.</p>
+                </div>
+                <div class="step">
+                    <h3>Practice Exercises</h3>
+                    <p>Reinforce what you've learned with targeted exercises and real-world scenarios.</p>
+                </div>
+                <div class="step">
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvement with detailed progress reports and achievement badges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LinguaLearn</h3>
+                    <p>Making language learning accessible, effective, and enjoyable for everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Languages</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">Spanish</a></li>
+                        <li><a href="courses.html">French</a></li>
+                        <li><a href="courses.html">Japanese</a></li>
+                        <li><a href="courses.html">German</a></li>
+                        <li><a href="courses.html">More Coming Soon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 LinguaLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation (same as index.html)
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Language Tab Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const languageCourses = document.querySelectorAll('.language-course');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const language = btn.dataset.language;
+                
+                // Show/hide courses based on selection
+                languageCourses.forEach(course => {
+                    if (language === 'all' || course.dataset.language === language) {
+                        course.style.display = 'block';
+                    } else {
+                        course.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
