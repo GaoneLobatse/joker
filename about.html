@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - LinguaLearn</title>
+    <style>
+        /* Reuse all the global styles from index.html */
+        /* Add specific styles for the about page */
+        
+        /* About Hero */
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/about-bg.jpg') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        /* Mission Section */
+        .mission {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .mission-img img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid var(--light);
+        }
+        
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission-img {
+                order: -1;
+            }
+            
+            .about-hero {
+                height: 50vh;
+            }
+        }
+    </style>
+    <!-- Reuse the same font and icon links from index.html -->
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.svg" alt="LinguaLearn Logo" width="180" height="40">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p>Discover the passion behind LinguaLearn and our mission to transform language learning</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p>At LinguaLearn, we believe that language learning should be accessible, effective, and enjoyable for everyone. Our mission is to break down language barriers and connect people across cultures through innovative learning methods.</p>
+                    <p>Founded in 2018 by a team of language enthusiasts and educators, we've grown from a small startup to a global platform serving over 1 million students worldwide.</p>
+                    <p>What sets us apart is our focus on real-world communication skills, cultural understanding, and personalized learning paths that adapt to each student's needs and goals.</p>
+                </div>
+                <div class="mission-img">
+                    <img src="images/mission.jpg" alt="Language learning classroom" width="600" height="400">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+                <p>The passionate educators and innovators behind LinguaLearn</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="images/team1.jpg" alt="Dr. Elena Rodriguez" width="200" height="200">
+                    </div>
+                    <h3>Dr. Elena Rodriguez</h3>
+                    <p>Founder & CEO</p>
+                    <p>PhD in Linguistics, 15+ years teaching experience</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="images/team2.jpg" alt="Jean-Luc Martin" width="200" height="200">
+                    </div>
+                    <h3>Jean-Luc Martin</h3>
+                    <p>Head of Curriculum</p>
+                    <p>Polyglot, speaks 7 languages fluently</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="images/team3.jpg" alt="Yuki Tanaka" width="200" height="200">
+                    </div>
+                    <h3>Yuki Tanaka</h3>
+                    <p>Director of Technology</p>
+                    <p>EdTech specialist, AI learning expert</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="images/team4.jpg" alt="Sophia Williams" width="200" height="200">
+                    </div>
+                    <h3>Sophia Williams</h3>
+                    <p>Community Manager</p>
+                    <p>Connects learners worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1M+</h3>
+                    <p>Students Worldwide</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Countries Represented</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Expert Teachers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LinguaLearn</h3>
+                    <p>Making language learning accessible, effective, and enjoyable for everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Languages</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">Spanish</a></li>
+                        <li><a href="courses.html">French</a></li>
+                        <li><a href="courses.html">Japanese</a></li>
+                        <li><a href="courses.html">German</a></li>
+                        <li><a href="courses.html">More Coming Soon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 LinguaLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation (same as index.html)
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
