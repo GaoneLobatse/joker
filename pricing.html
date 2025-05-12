@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - LinguaLearn</title>
+    <style>
+        /* Reuse all the global styles from index.html */
+        /* Add specific styles for the pricing page */
+        
+        /* Pricing Hero */
+        .pricing-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/pricing-bg.jpg') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        /* Pricing Plans */
+        .pricing-plans {
+            padding: 80px 0;
+        }
+        
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .plan-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .plan-card.popular {
+            border: 2px solid var(--secondary);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 0 5px 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .plan-header {
+            padding: 30px;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .plan-period {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .plan-features {
+            padding: 30px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        /* Free Trial */
+        .free-trial {
+            padding: 80px 0;
+            background: var(--light);
+            text-align: center;
+        }
+        
+        .trial-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 15px 20px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:after {
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active:after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #f9f9f9;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .pricing-hero {
+                height: 50vh;
+            }
+        }
+    </style>
+    <!-- Reuse the same font and icon links from index.html -->
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.svg" alt="LinguaLearn Logo" width="180" height="40">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pricing Hero -->
+    <section class="pricing-hero">
+        <div class="container">
+            <h1>Simple, Transparent Pricing</h1>
+            <p>Choose the plan that fits your learning goals and budget</p>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="pricing-plans">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Pricing Plans</h2>
+                <p>Flexible options for every type of learner</p>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <div class="plan-name">Basic</div>
+                        <div class="plan-price">$9.99</div>
+                        <div class="plan-period">per month</div>
+                    </div>
+                    <div class="plan-features">
+                        <ul class="feature-list">
+                            <li>Access to 1 language course</li>
+                            <li>Basic lesson content</li>
+                            <li>Limited practice exercises</li>
+                            <li>Email support</li>
+                            <li>Progress tracking</li>
+                        </ul>
+                        <a href="#" class="btn">Get Started</a>
+                    </div>
+                </div>
+                <div class="plan-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <div class="plan-name">Premium</div>
+                        <div class="plan-price">$19.99</div>
+                        <div class="plan-period">per month</div>
+                    </div>
+                    <div class="plan-features">
+                        <ul class="feature-list">
+                            <li>Access to all language courses</li>
+                            <li>Full lesson content</li>
+                            <li>Unlimited practice exercises</li>
+                            <li>Priority email support</li>
+                            <li>Advanced progress tracking</li>
+                            <li>Offline access</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary">Get Started</a>
+                    </div>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <div class="plan-name">Annual</div>
+                        <div class="plan-price">$179.99</div>
+                        <div class="plan-period">per year (save 25%)</div>
+                    </div>
+                    <div class="plan-features">
+                        <ul class="feature-list">
+                            <li>Access to all language courses</li>
+                            <li>Full lesson content</li>
+                            <li>Unlimited practice exercises</li>
+                            <li>Priority email support</li>
+                            <li>Advanced progress tracking</li>
+                            <li>Offline access</li>
+                            <li>Exclusive bonus content</li>
+                        </ul>
+                        <a href="#" class="btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Trial -->
+    <section class="free-trial">
+        <div class="container">
+            <div class="trial-content">
+                <h2>Try LinguaLearn for Free</h2>
+                <p>Get 7 days of full access to all our courses and features. No credit card required.</p>
+                <a href="#" class="btn btn-secondary">Start Free Trial</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our pricing and plans</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods do you accept?
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and in some countries, bank transfers. All payments are processed securely through our payment partners.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I switch plans or cancel anytime?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can upgrade, downgrade, or cancel your subscription at any time. Changes will take effect at the end of your current billing cycle.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer discounts for students?
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 20% discount for students with a valid .edu email address or student ID. Contact our support team to verify your student status and receive your discount code.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there a family or group plan?
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer special pricing for groups of 3 or more people. Please contact our sales team for more information about group plans and enterprise solutions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What's included in the free trial?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our 7-day free trial gives you full access to all courses and features, equivalent to our Premium plan. You can explore all content and cancel anytime during the trial period without being charged.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LinguaLearn</h3>
+                    <p>Making language learning accessible, effective, and enjoyable for everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Languages</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">Spanish</a></li>
+                        <li><a href="courses.html">French</a></li>
+                        <li><a href="courses.html">Japanese</a></li>
+                        <li><a href="courses.html">German</a></li>
+                        <li><a href="courses.html">More Coming Soon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 LinguaLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation (same as index.html)
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('active');
+                });
+                
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+                
+                // Open current answer if it was closed
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
